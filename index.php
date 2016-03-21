@@ -23,30 +23,16 @@
 	foreach ($months as $month):
 		if ($month['month_id'] == $prevmonth){
 			if ($month['day'] == $prevday){
-				echo '-';
-				echo '-';
-				 ?> <h1><?php echo $month['person']; ?> </h1><?php
-				echo '-';
-				echo'('; echo $month['year'];echo')';}
-	  		else { 
-	  			echo '-';
-				echo $month['day'];
-				echo '-';
-			  	echo $month['person'];
-			 	echo '-';
-				echo'('; echo $month['year'];echo')'; 
+				 ?> <p><?php echo $month['person']; echo'('; echo $month['year'];echo')'?> </p><?php }
+	  		else {
+				?> <h2><?php echo $month['day']; ?> </h2><?php
+			  	?> <p><?php echo $month['person']; echo'('; echo $month['year'];echo')' ?> </p><?php
 				$prevmonth = $month['month_id'];
 				$prevday = $month['day'];}}
 		else{
-			echo "<h1>";
-			echo $month['month'];
-			echo "</h1>";
-			echo '-';
-			echo $month['day'];
-			echo '-';
-			echo $month['person'];
-			echo '-';
-			echo'('; echo $month['year'];echo')'; 
+			?> <h1><?php echo $month['month']; ?> </h1><?php
+			?> <h2><?php echo $month['day']; ?> </h2><?php
+			?> <p><?php echo $month['person']; echo'('; echo $month['year'];echo')'; ?> </p><?php 
 			$prevmonth = $month['month_id'];}
 		?>
 		<br>
